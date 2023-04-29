@@ -1,6 +1,5 @@
 package marumasa.item_code.code;
 
-
 import org.bukkit.entity.Player;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
