@@ -1,4 +1,4 @@
 name: ItemCode
 version: '${version}'
-main: marumasa.item_code.minecraft
+main: marumasa.item_code.Minecraft
 api-version: 1.19
