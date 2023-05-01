@@ -9,28 +9,37 @@ import java.util.List;
 
 public class ItemBase {
 
+    //Use
     public static void UseEvent(ItemStack itemStack, Player player) {
-        final List<String> lore = getLore(itemStack);
-        if (lore == null) return;
-
-        for (List<String> key : database.ItemCodeEvent.keySet()) {
-            if (lore.equals(key)) {
-                final CodeBase codeBase = database.ItemCodeEvent.get(key);
-                codeBase.use(player);
-            }
-        }
+        final CodeBase codeBase = getCodeBase(itemStack);
+        if (codeBase == null) return;
+        codeBase.use(player);
     }
 
+    //Attack
     public static void AttackEvent(ItemStack itemStack, Player player) {
+        final CodeBase codeBase = getCodeBase(itemStack);
+        if (codeBase == null) return;
+        codeBase.attack(player);
+    }
+
+    //Tick
+    public static void TickEvent(ItemStack itemStack, Player player) {
+        final CodeBase codeBase = getCodeBase(itemStack);
+        if (codeBase == null) return;
+        codeBase.tick(player);
+    }
+
+    private static CodeBase getCodeBase(ItemStack itemStack) {
         final List<String> lore = getLore(itemStack);
-        if (lore == null) return;
+        if (lore == null) return null;
 
         for (List<String> key : database.ItemCodeEvent.keySet()) {
             if (lore.equals(key)) {
-                final CodeBase codeBase = database.ItemCodeEvent.get(key);
-                codeBase.attack(player);
+                return database.ItemCodeEvent.get(key);
             }
         }
+        return null;
     }
 
     private static List<String> getLore(ItemStack itemStack) {

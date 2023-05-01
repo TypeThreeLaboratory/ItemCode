@@ -8,4 +8,7 @@ public class CodeBase {
 
     public void attack(Player player) {
     }
+
+    public void tick(Player player) {
+    }
 }

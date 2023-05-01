@@ -7,6 +7,7 @@ public final class Minecraft extends JavaPlugin {
     @Override
     public void onEnable() {
         getServer().getPluginManager().registerEvents(new Events(), this);
+        new TickEvent(this).runTaskTimer(this, 1, 1);
     }
 
     @Override

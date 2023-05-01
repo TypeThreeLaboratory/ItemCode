@@ -17,7 +17,7 @@ public class speed_2 extends CodeBase {
             "            1",
             "    ));",
             "}",
-            "解説: 攻撃すると３秒間、移動速度上昇レベル２が付与される"
+            "解説: 攻撃すると移動速度上昇レベル２が３秒間付与される"
     ));
 
     public void attack(Player player) {

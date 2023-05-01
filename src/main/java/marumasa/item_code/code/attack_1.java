@@ -17,7 +17,7 @@ public class attack_1 extends CodeBase {
             "            0",
             "    ));",
             "}",
-            "解説: 右クリックすると１秒間、攻撃力上昇レベル１が付与される"
+            "解説: 右クリックすると攻撃力上昇レベル１が１秒間付与される"
     ));
 
     public void use(Player player) {
